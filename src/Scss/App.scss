@@ -1,0 +1,167 @@
+$color_blueDark: rgb(59, 66, 95);
+$color_firstGray: rgb(165, 165, 165);
+$color_secondGray: rgb(81, 81, 81);
+$color_thirdGray: rgb(188, 188, 188);
+$color_firstRed: red;
+$color_gray: rgb(115, 115, 115);
+$color_secondRed: rgb(255, 87, 110);
+$color_thirdRed: rgb(249, 21, 52);
+$color_blueLight: rgb(108, 194, 252);
+$color_blueDark: rgb(45, 146, 254);
+$color_blueDark1: rgb(162, 245, 245);
+$background-color_blue: #85c9e6;
+$background-color_azure: azure;
+$background-color_secondGray: aliceblue;
+
+@mixin flexbox($display, $justifyContent, $alignItem) {
+  display: $display;
+  justify-content: $justifyContent;
+  align-items:  $alignItem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 40%;
+  border-radius: 5px;
+  height: 550px;
+  margin: 30px auto;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+  background-color: $background-color_blue;
+  box-shadow: 0px 0px 5px $color_thirdGray;
+}
+
+.input-form_addtodo {
+  display: flex;
+  width: 100%;
+}
+
+.input-add {
+  width: 100%;
+}
+
+.modify-form {
+  min-width: 30%;
+  flex-direction: column;
+  @include flexbox(flex, center, center);
+  border: 1px solid $color_secondGray;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background-color: $background-color_azure;
+}
+.modifying-job {
+  font-size: 22px;
+  color: $color_blueDark;
+  margin-bottom: 4px;
+}
+.input_search {
+  width: 200px;
+  margin-top: 10px;
+}
+.Btn_save {
+  margin-top: 10px;
+}
+.close-btn {
+  font-size: 30px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: $color_firstGray;
+  &:hover {
+    cursor: pointer;
+    color: $color_secondGray;
+  }
+}
+.blur {
+  filter: blur(3px);
+  pointer-events: none;
+}
+.deactive {
+  display: none;
+}
+.input-form {
+  border-bottom: 1px solid $color_secondGray;
+  margin-bottom: 20px;
+  padding: 10px;
+  flex-direction: column;
+  @include flexbox(flex, center, center);
+}
+.form-label {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+input {
+  &::placeholder {
+    color: $color_thirdGray;
+  }
+}
+.error {
+  color: $color_firstRed;
+  font-size: 16px;
+}
+.no-job {
+  font-size: 20px;
+  color: $color_gray;
+}
+button {
+  padding: 7px 30px;
+  width: 50%;
+  border-radius: 5px;
+  border: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+.btn-add {
+  margin-left: 10px;
+  width: 20%;
+}
+.list-job {
+  height: 300px;
+  overflow-y: scroll;
+}
+ul {
+  list-style: none;
+}
+.item {
+  @include flexbox(flex, space-between, center);
+  background-color: $background-color_secondGray;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 7px;
+}
+.item-control {
+  width: 13%;
+  @include flexbox(flex, space-between, null);
+}
+.delete-btn {
+  font-size: 20px;
+  color: $color_secondRed;
+  &:hover {
+    cursor: pointer;
+    color: $color_thirdRed;
+  }
+}
+.edit-btn {
+  font-size: 20px;
+  color: $color_blueLight;
+  &:hover {
+    cursor: pointer;
+    color: $color_blueDark;
+  }
+}
+.arrow {
+  margin-right: 5px;
+  color: $color_blueDark1;
+}
